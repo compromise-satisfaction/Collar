@@ -13,12 +13,42 @@ function Load(width,height){
       var Label1 = new Label();
       Label1.font  = "300px monospace";
       Label1.color = 'black';
-      Label1.x = 0;
+      Label1.x = 300;
       Label1.y = 0;
       Label1.width = 300;
       Label1.height = 300;
       Label1.text = "■";
       scene.addChild(Label1);
+
+      var Label2 = new Label();
+      Label2.font  = "200px monospace";
+      Label2.color = 'red';
+      Label2.x = 0;
+      Label2.y = 300;
+      Label2.width = 200;
+      Label2.height = 200;
+      Label2.text = "■";
+      scene.addChild(Label2);
+
+      var Label3 = new Label();
+      Label3.font  = "200px monospace";
+      Label3.color = 'green';
+      Label3.x = 400;
+      Label3.y = 300;
+      Label3.width = 200;
+      Label3.height = 200;
+      Label3.text = "■";
+      scene.addChild(Label3);
+
+      var Label4 = new Label();
+      Label4.font  = "200px monospace";
+      Label4.color = 'blue';
+      Label4.x = 200;
+      Label4.y = 300;
+      Label4.width = 200;
+      Label4.height = 200;
+      Label4.text = "■";
+      scene.addChild(Label4);
 
       var S_Input1 = new Entity();
       S_Input1.moveTo(0,0);
@@ -73,6 +103,16 @@ function Load(width,height){
       S_Input5._element.value = "保存";
       S_Input5._element.type = "submit";
       scene.addChild(S_Input5);
+
+      var S_Input6 = new Entity();
+      S_Input6.moveTo(0,200);
+      S_Input6.width = 190;
+      S_Input6.height = 30;
+      S_Input6._element = document.createElement('input');
+      S_Input6._element.value = "リセット";
+      S_Input6._element.type = "submit";
+      scene.addChild(S_Input6);
+
       S_Input5.addEventListener("touchstart",function(){
         var form = document.createElement('form');
         var request = document.createElement('input');
@@ -85,6 +125,28 @@ function Load(width,height){
         form.appendChild(request);
         document.body.appendChild(form);
         form.submit();
+        return;
+      })
+
+      S_Input6.addEventListener("touchstart",function(){
+        S_Input1._element.value = 0;
+        S_Input2._element.value = 0;
+        S_Input3._element.value = 0;
+        return;
+      })
+
+      Label2.addEventListener("touchmove",function(e){
+        S_Input1._element.value ++;
+        return;
+      })
+
+      Label3.addEventListener("touchmove",function(e){
+        S_Input2._element.value ++;
+        return;
+      })
+
+      Label4.addEventListener("touchmove",function(e){
+        S_Input3._element.value ++;
         return;
       })
 
