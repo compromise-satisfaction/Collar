@@ -81,7 +81,7 @@ function Load(width,height){
         form.action = 'https://script.google.com/macros/s/AKfycbyPUoNDeYxhqB0aUkMm9ySQo29NlrPtG5vLWDP2w9LY9v8TM9mV/exec';
         request.type = 'hidden'; //入力フォームが表示されないように
         request.name = "value";
-        request.value = Label1.color;
+        request.value = Colors;
         form.appendChild(request);
         document.body.appendChild(form);
         form.submit();
